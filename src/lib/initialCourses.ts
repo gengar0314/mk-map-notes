@@ -6,14 +6,14 @@ export const initialCourses: Course[] = [
   {
     id: 'course-1',
     name: 'どんぐりツリーハウス～キノピオファクトリー',
-    imageDataUrl: '/maps/どんぐりツリーハウス～キノピオファクトリー.png',
+    imageDataUrl: '/assets/images/どんぐりツリーハウス～キノピオファクトリー.png',
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   },
   {
     id: 'course-2',
     name: 'おばけシネマ～マリオサーキット',
-    imageDataUrl: '/maps/おばけシネマ～マリオサーキット.png',
+    imageDataUrl: '/assets/images/おばけシネマ～マリオサーキット.png',
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   },
