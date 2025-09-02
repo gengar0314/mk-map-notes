@@ -1,11 +1,18 @@
 import { set, get, update } from 'idb-keyval';
 import { Course, Marker } from './types';
+import { initialCourses } from './initialCourses';
 
 const COURSES_KEY = 'courses';
 const MARKERS_KEY = 'markers';
 
 export async function listCourses(): Promise<Course[]> {
-  return (await get(COURSES_KEY)) ?? [];
+  let courses = await get(COURSES_KEY);
+  if (!courses || courses.length === 0) {
+    // 初期コースを保存
+    await set(COURSES_KEY, initialCourses);
+    courses = initialCourses;
+  }
+  return courses ?? [];
 }
 export async function saveCourses(courses: Course[]) {
   return set(COURSES_KEY, courses);
